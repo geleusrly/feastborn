@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FEASTBORN</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #100e10;
+    color: #eee4d2;
+    font-family: Georgia, serif;
+}
+
+.app {
+    max-width: 480px;
+    margin: auto;
+    min-height: 100vh;
+    padding: 22px 18px;
+    background: linear-gradient(180deg, #211a1b, #100e10);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #72513b;
+    padding-bottom: 18px;
+}
+
+.logo {
+    font-size: 32px;
+    letter-spacing: 5px;
+    color: #c69b61;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #887a70;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 7px;
+}
+
+.currencies {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 14px;
+    background: #292021;
+    border: 1px solid #59402f;
+    border-radius: 8px;
+}
+
+.character {
+    text-align: center;
+    padding: 30px 15px;
+    border: 1px solid #59402f;
+    border-radius: 10px;
+    background: radial-gradient(#49302b, #211a1b 70%);
+}
+
+.hero {
+    font-size: 90px;
+    margin: 15px;
+}
+
+h2 {
+    color: #d4ad78;
+    letter-spacing: 2px;
+}
+
+.level {
+    color: #a99a88;
+    font-size: 13px;
+}
+
+.stats {
+    margin-top: 22px;
+}
+
+.stat {
+    margin: 14px 0;
+}
+
+.stat-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.bar {
+    height: 9px;
+    background: #393033;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.health { width: 85%; background: #9e3939; }
+.energy { width: 70%; background: #b68a43; }
+.strength { width: 60%; background: #657e52; }
+
+.section {
+    margin-top: 24px;
+    padding: 17px;
+    border: 1px solid #59402f;
+    border-radius: 9px;
+    background: #211a1b;
+}
+
+.section h3 {
+    color: #c69b61;
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+
+.nutrition {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.nutrition strong {
+    display: block;
+    color: #d8b77e;
+    font-size: 21px;
+}
+
+.nutrition span {
+    color: #96877a;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 18px;
+    border: 1px solid #a77a49;
+    border-radius: 7px;
+    background: #513326;
+    color: #f0d8b0;
+    font-size: 15px;
+    font-family: Georgia, serif;
+}
+
+button:active {
+    background: #765039;
+}
+
+footer {
+    text-align: center;
+    color: #655b56;
+    font-size: 11px;
+    margin-top: 25px;
+}
+</style>
+</head>
+<body>
+    <script>
+    const tg = window.Telegram.WebApp;
+
+    tg.ready();
+    tg.expand();
+
+    console.log("FEASTBORN Telegram SDK подключён");
+</script>
+
+<div class="app">
+
+<header>
+    <div class="logo">FEASTBORN</div>
+    <div class="subtitle">SURVIVE · EAT · EVOLVE</div>
+</header>
+
+<div class="currencies">
+    <div>🥈 Серебро: <strong>0</strong></div>
+    <div>🥇 Золото: <strong>0</strong></div>
+</div>
+
+<div class="character">
+    <div class="hero">⚔️</div>
+    <h2>ПУТНИК</h2>
+    <div class="level">Уровень 1 · Начинающий</div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-title">
+                <span>❤️ Здоровье</span>
+                <span>85 / 100</span>
+            </div>
+            <div class="bar"><div class="fill health"></div></div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-title">
+                <span>⚡ Энергия</span>
+                <span>70 / 100</span>
+            </div>
+            <div class="bar"><div class="fill energy"></div></div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-title">
+                <span>🗡️ Сила</span>
+                <span>60 / 100</span>
+            </div>
+            <div class="bar"><div class="fill strength"></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>📜 ДНЕВНИК ПИТАНИЯ</h3>
+    <div class="nutrition">
+        <div><strong>0 г</strong><span>Белки</span></div>
+        <div><strong>0 г</strong><span>Жиры</span></div>
+        <div><strong>0 г</strong><span>Углеводы</span></div>
+    </div>
+    <button>+ Добавить приём пищи</button>
+</div>
+
+<footer>
+    THE WORLD REMEMBERS YOUR CHOICES
+</footer>
+
+</div>
+
+</body>
+</html>
